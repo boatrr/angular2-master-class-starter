@@ -7,6 +7,7 @@ import {ContactsListComponent} from './contacts-list-component/contacts-list-com
 import {ROUTER_PROVIDERS} from 'angular2/router';
 import {RouteConfig} from 'angular2/router';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {ContactDetailComponent} from './contact-detail-component/contact-detail-component';
 
 @Component({
   selector: 'contacts-app',
@@ -19,17 +20,25 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     ContactsService,
     ROUTER_PROVIDERS
   ],
-  template: `
+  template:
+  `
     <contact-header-component></contact-header-component>
     <router-outlet></router-outlet>
-          `
+  `
 })
 @RouteConfig([
   {
       path: '/',
       component: ContactsListComponent,
       name: 'ContactList'
-    }
+  },
+  {
+    path: '/contacts/:id',
+    component: ContactDetailComponent,
+    name: 'ContactDetails'
+  }
 ])
 
-export class ContactsApp {}
+export class ContactsApp {
+
+}
