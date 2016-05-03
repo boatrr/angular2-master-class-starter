@@ -59,6 +59,11 @@ import {Contact} from '../models/contact';
             </div>
           </fieldset>
         </div>
+        <a [routerLink]="['/ContactEditor', {id: contact.id}]">
+        <div class="card-action">
+          <a class="btn">Edit</a>
+        </div>
+          </a>
         <div class="card-action">
           <a class="btn" [routerLink]="['/ContactList']">Go Back</a>
         </div>
